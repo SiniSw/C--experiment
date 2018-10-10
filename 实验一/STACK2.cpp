@@ -71,7 +71,7 @@ STACK *const assign(STACK *const p, const STACK&s) //赋s给p指的栈,并返回p
 void print(const STACK*const p)		        //打印p指向的栈
 {
         for(int i=0;i<p->pos;i++)
-                printf("%d ",p->elems[i]);
+                printf("%d  ",p->elems[i]);
 }
 void destroySTACK(STACK*const p)		//销毁p指向的栈
 {
@@ -94,20 +94,17 @@ int main(int argc, char* argv[])
 			{
 				if(argv[i][1]=='S')
 				{
-				fprintf(fp,"%c",argv[i][1]);
-				fprintf(fp, " ");
+				fprintf(fp,"%c  ",argv[i][1]);
 				flag=0;			
 				}
 				if(argv[i][1]=='I')
 				{
-				fprintf(fp,"%c",argv[i][1]);
-				fprintf(fp, " ");
+				fprintf(fp,"%c  ",argv[i][1]);
 				flag=1;
 				}
 				if(argv[i][1]=='O')
 				{
-				fprintf(fp,"%c",argv[i][1]);
-				fprintf(fp, " ");
+				fprintf(fp,"%c  ",argv[i][1]);
 				flag=2;
 				}
 			}
@@ -121,7 +118,7 @@ int main(int argc, char* argv[])
 							break;
 					default:break;					
 				}
-				fprintf(fp,"%d",argv[i]);
+				fprintf(fp,"%d  ",argv[i]);
 			}
 			}
 			print(p);
