@@ -101,26 +101,28 @@ int main(int argc, char* argv[])
 	                fprintf(fp,"%d  ",p->elems[i]);
 				if(argv[i][1]=='S')
 				{
-				if(flag!=0)
-				{
-					fprintf(fp,"E  ");
-					i=argc;
-				}
-				else{
-				fprintf(fp,"%c  ",argv[i][1]);
-				flag=1;						
-				}	
-		
+					fprintf(fp,"%c  ",argv[i][1]);
+					flag=1;							
+					if(flag!=0)
+					{
+						fprintf(fp,"E  ");
+						i=argc;
+					}		
 				}
 				if(argv[i][1]=='I')
 				{
-				fprintf(fp,"%c  ",argv[i][1]);
-				flag=2;
+					fprintf(fp,"%c  ",argv[i][1]);
+					flag=2;
+					if(flag!=0)
+					{
+						fprintf(fp,"E  ");
+						i=argc;
+					}
 				}
 				if(argv[i][1]=='O')
 				{
-				fprintf(fp,"%c  ",argv[i][1]);
-				flag=3;
+					fprintf(fp,"%c  ",argv[i][1]);
+					flag=3;
 				}
 			}
 			else{
@@ -131,7 +133,13 @@ int main(int argc, char* argv[])
 							break;
 					case 2:push(p,atoi(argv[i]));break;
 					case 3:for(int j=atoi(argv[i]);j<atoi(argv[2]);i++)
+							{
+								if(p->pos==0){
+											fprintf(fp,"E  ");
+											i=argc;
+											}
 								pop(p,e);
+							}	
 							break;
 					default:break;					
 				}
